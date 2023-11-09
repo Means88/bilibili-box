@@ -12,7 +12,7 @@ interface VList {
 }
 
 async function getVList() {
-  const data = await fetch(biliApiUrl);
+  const data = await fetch(biliApiUrl, { headers: { "User-Agent": 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36' } });
   const json = await data.json();
   const vList = json.data.list.vlist as VList[];
   return vList;
